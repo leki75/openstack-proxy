@@ -1,0 +1,4 @@
+export OS_AUTH_URL=http://<OPENSTACK_PROXY_IP>:5000/v2.0
+export OS_PROJECT_NAME=
+export OS_USERNAME=
+export OS_PASSWORD=

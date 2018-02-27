@@ -1,0 +1,19 @@
+---
+version: '3'
+services:
+  proxy:
+    image: openstack-proxy:latest
+    build: .
+    ports:
+      - "5000:5000"   # keystone
+      - "35357:35357" # keystone admin
+      - "8000:8000"   # heat
+      - "3333:3333"   # s3
+      - "8773:8773"   # ec2
+      - "8774:8774"   # nova
+      - "8776:8776"   # cinder
+      - "9292:9292"   # glance
+      - "9696:9696"   # neutron
+    environment:
+      - OS_INTERNAL_IP=172.22.192.250
+      - OS_EXTERNAL_IP=192.175.27.100
